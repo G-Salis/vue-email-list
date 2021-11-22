@@ -12,8 +12,7 @@ const app = new Vue({
   },
   methods:{
 
-    getNumber(){
-      // this.isLoading = true;
+    getEmail(){
       this.emails = [];
 
       for(let i = 0; i < 10; i++){
@@ -25,16 +24,9 @@ const app = new Vue({
           const data = response.data;
 
           this.emails.push(data.response)
-          //solo quando è completo l'array finisce il loading
-          if(this.emails.length === 10){
-            this.isLoading = false;
-          }
+        
         })
-        .catch((error) =>{
-          console.log('KO',error);
-          // solo n questo caso viene visulizzato l'erroe
-          this.httpError = true;
-        })
+    
       }
 
     }
